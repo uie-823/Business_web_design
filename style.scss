@@ -192,7 +192,7 @@ footer {
 
     img {
         width: 100px;
-        transform: scaleX(-1); 
+        transform: scaleX(-1);
     }
 
     p {
@@ -200,35 +200,85 @@ footer {
         padding: 20px 0;
     }
 }
-#menu{
+
+// 菜單
+#menu {
     display: none;
-}
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding: 10px;
+    cursor: pointer;
 
-    // 手機
-    @media screen and (max-width: 768px){
-
+    a.current {
+        background-color: $bgcolor;
+        display: inline-block;
+        width: 100%;
+        padding: 10px 20px;
+        border-radius: 30px;
+        text-align: center;
+        color: #fff !important;
     }
-    // 平板
-    @media screen and (min-width: 769px)  {
 
-        nav {
-            grid-template-columns: auto;
-    
-            ul {
-                display: none;
+    img {
+        width: 40px;
+        object-fit: cover;
+        filter: invert(1);
+    }
+
+    // 啟動：點選元素時
+    &:active #menu-box{
+        right: 0;
+    }
+    &:hover #menu-box{
+        right: 0;
+    }
+
+    #menu-box {
+        position: absolute;
+        right: -500px;
+        top: 0;
+        width: 500px;
+        background-color: #fff;
+        transition: 0.5s;
+
+        ul {
+            list-style: none;
+            li {
+                padding: 20px;
+
+                a {
+                    color: $text-color-black;
+                    text-decoration: none;
+                    font-size: 16px;
+                }
             }
         }
-
-        #menu {
-            display: block;
-            position: fixed;
-            right: 0;
-            top: 0;
-            padding: 10px;
-            filter: invert(1);
-            cursor: pointer;
-        }
-    }  
-    // 電腦
-    @media screen and (min-width: 1025px) {
     }
+}
+
+// 手機
+@media screen and (max-width: 768px) {
+
+}
+
+// 平板
+@media screen and (min-width: 769px) {
+
+    nav {
+        grid-template-columns: auto;
+
+        ul {
+            display: none;
+        }
+    }
+
+    #menu {
+        display: block;
+    }
+}
+
+// 電腦
+@media screen and (min-width: 1025px) {
+
+}
