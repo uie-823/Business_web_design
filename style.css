@@ -108,7 +108,7 @@ nav img:hover {
 }
 
 .content .pic img {
-  width: 450px;
+  width: 500px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -297,6 +297,22 @@ footer p {
   }
   #menu {
     display: block;
+  }
+  #content-1, #content-2, #content-3 {
+        grid-template-areas: 'text-area' 'pic';
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  #content-1 .pic, #content-2 .pic, #content-3 .pic {
+    text-align: center;
+  }
+  #content-1 .text-area, #content-2 .text-area, #content-3 .text-area {
+    padding: 50px 300px;
+  }
+  #icon div {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+    padding: 50px;
   }
 }
 /*# sourceMappingURL=style.css.map */

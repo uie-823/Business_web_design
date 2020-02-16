@@ -97,7 +97,7 @@ nav {
         grid-area: pic;
 
         img{
-            width: 450px;
+            width: 500px;
             object-fit: cover;
         }
         
@@ -286,9 +286,30 @@ footer {
     #menu {
         display: block;
     }
-}
+
+    #content-1, #content-2, #content-3 {
+        // "" 一列
+        // "" "" 兩列
+        grid-template-areas: 'text-area' 'pic';
+        grid-template-columns: 1fr;
+
+        .pic {
+            text-align: center;
+        }
+
+        .text-area {
+            padding: 50px 300px;
+        }
+    }
+
+    #icon {
+        div {
+            grid-template-columns: repeat(4, 1fr);
+            padding: 50px;
+        }
+    }
+} 
 
 // 電腦
 @media screen and (min-width: 1025px) {
-
 }
