@@ -39,13 +39,13 @@
 nav {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto 70px auto;
-      grid-template-columns: auto 70px auto;
+  -ms-grid-columns: auto 80px auto;
+      grid-template-columns: auto 80px auto;
   text-align: center;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  height: 100px;
+  height: 70px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -108,7 +108,7 @@ nav img:hover {
 }
 
 .content .pic img {
-  width: 570px;
+  width: 450px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -192,11 +192,52 @@ nav img:hover {
   width: 58px;
 }
 
-#icon div span {
+#icon span {
   display: block;
   color: #fff;
   font-weight: 400;
   padding: 10px 0;
   font-size: 12px;
+}
+
+footer {
+  background-color: #333;
+  text-align: center;
+  padding: 50px 0;
+}
+
+footer img {
+  width: 100px;
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+}
+
+footer p {
+  font-size: 10px;
+  padding: 20px 0;
+}
+
+#menu {
+  display: none;
+}
+
+@media screen and (min-width: 769px) {
+  nav {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
+  nav ul {
+    display: none;
+  }
+  #menu {
+    display: block;
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding: 10px;
+    -webkit-filter: invert(1);
+            filter: invert(1);
+    cursor: pointer;
+  }
 }
 /*# sourceMappingURL=style.css.map */

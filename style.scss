@@ -38,11 +38,11 @@ $bgcolor:#5F5F5F;
 
 nav {
     display: grid;
-    grid-template-columns: auto 70px auto;
+    grid-template-columns: auto 80px auto;
     text-align: center;
     position: sticky;
     top: 0;
-    height: 100px;
+    height: 70px;
     // 使用格線可讓內容垂直對齊
     align-items: center;
     max-width: 1200px;
@@ -50,6 +50,7 @@ nav {
 
     ul {
         list-style: none;
+        
 
         li {
             display: inline-block;
@@ -96,7 +97,7 @@ nav {
         grid-area: pic;
 
         img{
-            width: 570px;
+            width: 450px;
             object-fit: cover;
         }
         
@@ -170,6 +171,8 @@ nav {
         img{
             display: block;
             width: 58px;
+            
+             }
         }
 
         span{
@@ -181,4 +184,51 @@ nav {
 
         }
     }
+// 頁尾
+footer {
+    background-color: $text-color-black;
+    text-align: center;
+    padding: 50px 0;
+
+    img {
+        width: 100px;
+        transform: scaleX(-1); 
+    }
+
+    p {
+        font-size: 10px;
+        padding: 20px 0;
+    }
 }
+#menu{
+    display: none;
+}
+
+    // 手機
+    @media screen and (max-width: 768px){
+
+    }
+    // 平板
+    @media screen and (min-width: 769px)  {
+
+        nav {
+            grid-template-columns: auto;
+    
+            ul {
+                display: none;
+            }
+        }
+
+        #menu {
+            display: block;
+            position: fixed;
+            right: 0;
+            top: 0;
+            padding: 10px;
+            filter: invert(1);
+            cursor: pointer;
+        }
+    }  
+    // 電腦
+    @media screen and (min-width: 1025px) {
+    }
