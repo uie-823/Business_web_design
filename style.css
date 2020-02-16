@@ -92,7 +92,7 @@ nav img:hover {
   max-width: 1200px;
   display: -ms-grid;
   display: grid;
-  margin: 0 auto;
+  margin: 30px auto;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
 }
@@ -108,7 +108,9 @@ nav img:hover {
 }
 
 .content .pic img {
-  width: 526px;
+  width: 570px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .content .text-area {
@@ -151,5 +153,50 @@ nav img:hover {
 
 #content-2 {
       grid-template-areas: 'text-area pic';
+}
+
+#icon {
+  background-color: #5F5F5F;
+}
+
+#icon * {
+  color: #333;
+}
+
+#icon div {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
+}
+
+#icon div div {
+  display: block;
+  text-align: center;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  opacity: 0.8;
+}
+
+#icon div div:hover {
+  opacity: 1;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+#icon div img {
+  display: block;
+  width: 58px;
+}
+
+#icon div span {
+  display: block;
+  color: #fff;
+  font-weight: 400;
+  padding: 10px 0;
+  font-size: 12px;
 }
 /*# sourceMappingURL=style.css.map */

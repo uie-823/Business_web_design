@@ -1,4 +1,5 @@
 $text-color-black: #333;
+$bgcolor:#5F5F5F;
 
 * {
     margin: 0;
@@ -82,7 +83,7 @@ nav {
 .content {
     max-width: 1200px;
     display: grid;
-    margin: 0 auto;
+    margin: 30px auto;
     grid-template-columns: 1fr 1fr;
 
     * {
@@ -94,7 +95,8 @@ nav {
         grid-area: pic;
 
         img{
-            width: 526px;
+            width: 570px;
+            object-fit: cover;
         }
         
     }
@@ -134,4 +136,47 @@ nav {
 }
 #content-2 {
     grid-template-areas: 'text-area pic';
+}
+// 圖示
+#icon {
+    background-color: $bgcolor;
+
+    * {
+        color: $text-color-black;
+    }
+
+    div {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px 0;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+
+        div{
+            display: block;
+            text-align: center;
+            transition: 0.5s;
+            opacity: 0.8;
+            
+
+            &:hover{
+               opacity: 1;
+               transform: scale(1.1);
+            }
+        }
+
+        img{
+            display: block;
+            width: 58px;
+        }
+
+        span{
+            display: block;
+            color: #fff;
+            font-weight: 400;
+            padding: 10px 0;
+            font-size: 12px;
+
+        }
+    }
 }
