@@ -41,6 +41,7 @@ nav {
     max-width: 100%;
     position: sticky;
     top: 0;
+    z-index: 999;
 
     .navbar{
         display: grid;
@@ -213,6 +214,7 @@ footer {
     top: 0;
     padding: 10px;
     cursor: pointer;
+    z-index: 999;
 
     a.current {
         background-color: $bgcolor;
