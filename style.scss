@@ -37,47 +37,51 @@ $bgcolor:#5F5F5F;
 }
 
 nav {
-    display: grid;
-    grid-template-columns: auto 80px auto;
-    text-align: center;
+    background: #000;
+    max-width: 100%;
     position: sticky;
     top: 0;
-    height: 70px;
-    // 使用格線可讓內容垂直對齊
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
 
-    ul {
-        list-style: none;
-        
-
-        li {
-            display: inline-block;
+    .navbar{
+        display: grid;
+        grid-template-columns: auto 80px auto;
+        text-align: center;
+        height: 70px;
+        // 使用格線可讓內容垂直對齊
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        ul {
+            list-style: none;
+    
+            li {
+                display: inline-block;
+                transition: 0.5s;
+    
+                a {
+                    text-decoration: none;
+                    color: #fff;
+                    padding: 15px;
+                    font-weight: 900;
+                }
+    
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    
+        img {
+            width: 80px;
             transition: 0.5s;
-
-            a {
-                text-decoration: none;
-                color: #fff;
-                padding: 15px;
-                font-weight: 900;
-            }
-
+            transform: scaleX(-1);
+    
             &:hover {
-                transform: scale(1.1);
+                transform: scaleX(-1.2) scaleY(1.2);
             }
         }
     }
 
-    img {
-        width: 80px;
-        transition: 0.5s;
-        transform: scaleX(-1);
-
-        &:hover {
-            transform: scaleX(-1.2) scaleY(1.2);
-        }
-    }
 }
 
 // 文章區域
@@ -149,7 +153,7 @@ nav {
     }
 
     div {
-        max-width: 900px;
+        max-width: 1080px;
         margin: 0 auto;
         padding: 20px 0;
         display: grid;
@@ -269,48 +273,141 @@ footer {
 
 // 手機
 @media screen and (max-width: 768px) {
+    nav {
+		grid-template-columns: auto;
 
+		ul {
+			display: none;
+		}
+    }
+    
+    #banner {
+
+        div {
+            width: 100%;
+    
+            h1 {
+                font-size: 36px;
+            }
+        }
+    }
+
+	#menu {
+        display: block;
+        
+        #menu-box {
+            width: 300px;
+            font-size: 20px;
+
+            ul {
+                li {
+                    padding: 20px;
+                    a {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+	}
+
+	#content-1,
+	#content-2,
+	#content-3 {
+		// "" 一列
+		// "" "" 兩列
+		grid-template-areas: 'text-area' 'pic';
+		grid-template-columns: 1fr;
+
+		.pic {
+            text-align: center;
+            
+            img {
+                width: 300px;
+            }
+		}
+
+		.text-area {
+			padding: 0px;
+		}
+	}
+
+	#icon {
+		div {
+			grid-template-columns: repeat(2, 1fr);
+			padding: 10px;
+		}
+	}
 }
 
 // 平板
 @media screen and (min-width: 769px) {
+	nav {
+		grid-template-columns: auto;
 
-    nav {
-        grid-template-columns: auto;
-
-        ul {
-            display: none;
-        }
+		ul {
+			display: none;
+		}
     }
 
-    #menu {
-        display: block;
-    }
+	#menu {
+		display: block;
+	}
 
-    #content-1, #content-2, #content-3 {
-        // "" 一列
-        // "" "" 兩列
-        grid-template-areas: 'text-area' 'pic';
-        grid-template-columns: 1fr;
+	#content-1,
+	#content-2,
+	#content-3 {
+		// "" 一列
+		// "" "" 兩列
+		grid-template-areas: 'text-area' 'pic';
+		grid-template-columns: 1fr;
 
-        .pic {
-            text-align: center;
-        }
+		.pic {
+			text-align: center;
+		}
 
-        .text-area {
-            padding: 50px 300px;
-        }
-    }
+		.text-area {
+			padding: 0 100px;
+		}
+	}
 
-    #icon {
-        div {
-            grid-template-columns: repeat(4, 1fr);
-            padding: 50px;
-        }
-    }
-} 
+	#icon {
+		div {
+			grid-template-columns: repeat(4, 1fr);
+			padding: 50px;
+		}
+	}
+}
 
 // 電腦
 @media screen and (min-width: 1025px) {
+    nav {
+		grid-template-columns: repeat(3, auto);
 
+		ul {
+			display: block;
+		}
+	}
+
+	#menu {
+		display: none;
+	}
+
+	#content-1,
+	#content-2,
+	#content-3 {
+		// "" 一列
+		// "" "" 兩列
+		grid-template-areas: 'text-area pic';
+		grid-template-columns: repeat(2, 1fr);
+    }
+    
+    #content-2 {
+        grid-template-areas: 'pic text-area';
+    }
+
+	#icon {
+		div {
+			grid-template-columns: repeat(6, 1fr);
+		}
+	}
 }
